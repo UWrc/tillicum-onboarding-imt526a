@@ -32,6 +32,10 @@ Each topic in this tutorial is contained in its own Markdown file for easy navig
 | [**<ins>06-ood-jupyter.md</ins>**](./06-ood-jupyter.md) | Running Jupyter notebooks via Open OnDemand |
 | [**<ins>07-task.md</ins>**](./07-task.md) | Preparations for the class |
 
+## Slide Deck
+
+[**<ins>Slide Deck</ins>**](./slides_tillicum_onboarding.pdf) from live tutorial on March 31, 2026
+
 ## Additional Resources
 
 * [**<ins>Tillicum GPU Credits for Students</ins>**](https://depts.washington.edu/uwrcc/tillicum/)
