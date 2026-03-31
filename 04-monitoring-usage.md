@@ -1,4 +1,4 @@
-# Scheduling Jobs on Tillicum
+# Monitoring Your Usage on Tillicum
 
 When you first log in to Tillicum, you land on a shared login node (`tillicum-login01`). Login nodes are for light activity like transferring data, setting up environments, and preparing job scripts.
 
@@ -47,7 +47,7 @@ Tillicum provides usage-based billing:
 
 **Rate:** $0.90 per GPU-hour
 
-**Formula:** ***GPU Hours*** = Eplapsed Time x ***N*** GPUs          |
+**Formula:** ***GPU Hours*** = Elapsed Time x ***N*** GPUs
 
 ## Monitoring Your Usage: `hyakusage`
 
@@ -70,7 +70,7 @@ hyakusage
 **Key features:**
 - Displays usage for all accounts you have access to.
 - Shows total GPU-hours and costs per account for current billing cycle at the top of each account.
-- Shows active credits (e.g., remaining demo credits) with corresonding expiration dates.
+- Shows active credits (e.g., remaining demo credits) with corresponding expiration dates.
 - Integrates user- and account-level budgets (if set) to show progress toward limits.
 
 ### Options

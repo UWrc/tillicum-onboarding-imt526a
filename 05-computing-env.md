@@ -93,16 +93,16 @@ To make this the default behavior, edit (or create) the file `$HOME/.condarc`:
 
 ```yaml
 envs_dirs:
-  - /gpfs/<myproject>/<myfolder>/conda/envs
+  - /gpfs/projects/imt526a/<class env>/envs
 pkgs_dirs:
-  - /gpfs/<myproject>/<myfolder>/conda/pkgs
+  - /gpfs/projects/imt526a/<class env>/pkgs
 ```
 
 This will place all of your environments and package caches in this directory by default, and you won't have to worry about specifying the full prefix to your environment when installing it or activating it.
 
 > 📝 **Important Note on Conda Environments Locations** 
 > 
-> By default, the system Conda stores environments in your home directory ($HOME/.conda/envs). We recommend installing Conda environments to your **project directory** under `/gpfs/<myproject>/<myfolder>` (see instructions below) due to the limited storage space (10 GB) in your home directory.
+> By default, the system Conda stores environments in your home directory ($HOME/.conda/envs). We recommend installing Conda environments to your **project directory** under `/gpfs/projects/imt526a/<myfolder>` due to the limited storage space (10 GB) in your home directory.
 > 
 > `/gpfs/scrubbed` is not recommended since it's periodically cleaned. Files that have not been modified in the last 60 days may be deleted. **We have found that if users store their Conda environment directories here, some package files may be removed over time, breaking the environment.**
 > * The home directory is too small for most environments.
