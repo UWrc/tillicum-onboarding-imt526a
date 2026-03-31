@@ -82,8 +82,8 @@ Manually set the path to your Conda environment by `--prefix` and always activat
 
 ```bash
 module load conda
-conda create --prefix /gpfs/<myproject>/<myfolder>/myenv python=3.12
-conda activate /gpfs/<myproject>/<myfolder>/myenv
+conda create --prefix /gpfs/projects/<myproject>/<myfolder>/myenv python=3.12
+conda activate /gpfs/projects/<myproject>/<myfolder>/myenv
 conda install numpy scipy matplotlib
 ```
 
@@ -93,9 +93,9 @@ To make this the default behavior, edit (or create) the file `$HOME/.condarc`:
 
 ```yaml
 envs_dirs:
-  - /gpfs/projects/imt526a/<class env>/envs
+  - /gpfs/projects/imt526a/conda/envs
 pkgs_dirs:
-  - /gpfs/projects/imt526a/<class env>/pkgs
+  - /gpfs/projects/imt526a/conda/pkgs
 ```
 
 This will place all of your environments and package caches in this directory by default, and you won't have to worry about specifying the full prefix to your environment when installing it or activating it.

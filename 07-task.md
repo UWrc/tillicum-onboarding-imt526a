@@ -11,7 +11,7 @@
 
 ## 1. Create Your Working Directory
 
-Let's start with creating your own directory in `/gpfs/imt526a`:
+Let's start with creating your own directory in `/gpfs/projects/imt526a`:
 
 ```bash
 mkdir -p /gpfs/projects/imt526a/$USER
@@ -41,9 +41,9 @@ and edit it to include following lines:
 
 ```yaml
 envs_dirs:
-  - /gpfs/projects/imt526a/<class env>/envs
+  - /gpfs/projects/imt526a/conda/envs
 pkgs_dirs:
-  - /gpfs/projects/imt526a/<class env>/pkgs
+  - /gpfs/projects/imt526a/conda/pkgs
 ```
 
 Save (^O) and exit (^X) before continue in the shell.
