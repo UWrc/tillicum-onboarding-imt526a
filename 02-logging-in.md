@@ -35,9 +35,8 @@ Replace UW NetID with your UW NetID. You’ll be prompted for your UW password a
 Enter a passcode or select one of the following options:
 
  1. Duo Push to XXX-XXX-1234
- 2. Phone call to XXX-XXX-1234
 
-Passcode or option (1-2): 1
+Passcode or option (1-1): 1
 Success. Logging you in...
 ```
 
@@ -55,11 +54,12 @@ transferring data to and from Tillicum. Please work by requesting an
 interactive session on (or submitting batch jobs to) compute nodes.
 ```
 
-**Too many incorrect login attempts will result in an IP ban lasting up to an hour.**
+> ⚠️ **WARNING:** Too many incorrect login attempts will result in an IP ban lasting up to an hour.
 
 ## What’s a Shell?
 
 The shell is your command-line interface to Tillicum — the environment where you type commands.
+
 When you log in, you’re connected to a login node, which serves as the front door to the cluster. This is where you prepare your work, but not where you run compute-intensive jobs. All operations on the Tillicum login nodes are free of charge; however, compute- or memory-intensive tasks are not permitted, as these can disrupt other users. The login nodes are shared by all users.
 
 Your prompt will look something like:
@@ -71,7 +71,7 @@ Let’s break this down:
 
 * **UWNetID** — your username
 * **tillicum-login01** — the login node you’re connected to
-* **~** — the tilde symbol is a short hand for your home directory; this section of your command prompt will cahnge as you traverse the filesystem in the next section. 
+* **~** — the tilde symbol is a short hand for your home directory; this section of your command prompt will change as you traverse the filesystem in the next section. 
 
 ## Practice
 
@@ -92,11 +92,3 @@ ls -l
 ```
 
 This lists files and directories, along with details like size, and permissions.
-
-### 3. Check what node you’re on
-
-```bash
-hostname
-```
-
-This confirms which login node you’re connected to (e.g., `tillicum-login01`).

@@ -11,9 +11,8 @@ So whenever you see a path like:
 ```
 that means you’re accessing your home directory on the GPFS storage system, not a local disk on the login node.
 
-![Diagrammatic representation of the Tillicum filesystem directory tree. The directory tree shows the root directory at the top which holds all subdirectories. The picture is a truncated view of the filesystem showing the root directory and a few directories within it, including GPFS and a few directories within GPFS/: home/ where the Home directories are, software/ where we keep software, datasets/ where common datasets are stored, scrubbed/ where users can utilize temporary storage, and projects/ where the lab groups their dedicated storage.](/img/directory_graphic.jpg 'filesystem')
+![Diagrammatic representation of the Tillicum filesystem directory tree. The directory tree shows the root directory at the top which holds all subdirectories. The picture is a truncated view of the filesystem showing the root directory and a few directories within it, including GPFS and a few directories within GPFS/: home/ where the Home directories are, software/ where we keep software, datasets/ where common datasets are stored, scrubbed/ where users can utilize temporary storage, and projects/ where the lab groups their dedicated storage.](./img/directory_graphic.jpg 'filesystem')
 *Diagram - truncated view of the Tillicum filesystem.*
-
 
 As shown above, the Tillicum filesystem is organized under the root directory `/`. Within it, `/gpfs/` contains several key subdirectories:
 
@@ -38,9 +37,40 @@ Here’s a quick overview of Tillicum storage policies:
 
 ***Tillicum is a new service. We will constantly evaluate these storage policies based on user feedback.***
 
-**Important**: For this tutorial, participants will not have project storage. To request project or lab storage, complete the [**<ins>Tillicum intake form</ins>**](https://uwconnect.uw.edu/it?id=kb_article_view&sysparm_article=KB0036077).
+> 💡 **TIP:** For this class, students will have access to project storage `/gpfs/projects/imt526a`.
 
-## Practice
+# Data Transfer: Moving Files To and From Tillicum
+
+Efficient and reliable data transfer is a key part of working on Tillicum. There are two main ways to move files between your local computer and the cluster:
+
+| Method                           | Best For                               | Notes                                                                            |
+| -------------------------------- | -------------------------------------- | -------------------------------------------------------------------------------- |
+| **`scp` (Secure Copy Protocol)** | Small to medium file transfers         | Simple and available by default on all systems                                   |
+| **Globus**                       | Large datasets, unsupervised transfers | Automatically handles restarts and failures, ideal for long or complex transfers |
+
+## Transfer Data with `scp`
+
+`scp` (secure copy) works similarly to `ssh`—you’ll use your UW NetID credentials to securely copy data between your local machine and Tillicum. More instructions are available [**<ins>here</ins>**](https://hyak.uw.edu/docs/storage/transfer).
+
+## Transfer Data with Globus (Recommended)
+
+While `scp` is great for quick transfers, **Globus** is the best way to move large datasets reliably and automatically.
+
+Globus provides:
+* **Automatic checkpointing** – if your connection drops, transfers resume from where they left off
+* **Integrity checks** – ensures every file arrives intact
+* **Unsupervised transfers** – no need to stay connected while data moves
+
+Tillicum is available as a Globus collection for data transfer. Globus is available on Hyak Klone, Kopah, and UW OneDrive, allowing for seamless and high-speed data transfers to and from Tillicum.
+
+### Learn More
+
+* Hyak Klone Globus Documentation: [**<ins>Learn more here.</ins>**](https://hyak.uw.edu/docs/storage/globus)
+* Globus User Documentation: [**<ins>Learn more here.</ins>**](https://docs.globus.org/?_gl=1*s0ry7u*_ga*MTE2MzI4NzMxNi4xNzQyMzQxMTg3*_ga_7ZB89HGG0P*MTc0NDA3MjY1Ny4xNy4xLjE3NDQwNzI2NTcuMC4wLjA.)
+* [**<ins>Video Tutorial: Introduction to Globus for Researchers and New Users</ins>**](https://www.youtube.com/watch?v=-j7Mp3FN1zo&list=PLLCSx-IFoBeu2F-HF-DMoc5_AUsvYft8c&index=2)
+* [**<ins>Video Tutorial: Globus Connect Personal Setup</ins>**](https://www.youtube.com/watch?v=bpnVcAN99WY). *Note: the Endpoints Menu Tool appears to be deprecated and now "Endpoint" and "Collection" are synonymous. Your personal endpoint can be found by searching Collections.*
+
+# Practice
 
 Let's review key storage directories on Tillicum and practice commands.
 
@@ -76,6 +106,7 @@ ls -a
 ```
 
 ### 2. Monitoring Your Storage Usage
+
 To see how much space each subdirectory uses:
 
 ```bash
@@ -85,77 +116,25 @@ du -h -d 1
 This command reports how much space each folder occupies and updates dynamically as you clean up files.
 
 ### 3. Moving Around — cd
+
 The `cd` command changes your current directory. Some useful shortcuts:
 
 ```bash
-cd /       # Go to the root directory
-cd ~       # Go to your home directory
-cd         # Also goes to home directory
-cd /gpfs   # Go to the GPFS directory
-cd datasets # Go to our Data Commons
-ls         # List savailable datasets
-cd -       # Return to your previous directory
+cd ~                # Go to your home directory
+cd /gpfs            # Go to the GPFS directory
+ls                  # List contents under current directory: /gpfs
+cd projects/imt526a # Go to shared directory by this class
+pwd                 # Check your current location
+cd ..               # Return to your previous directory
 ```
-Check your current location with `pwd`.
 
-### 4. Scrubbed Storage — Our Tutorial Workspace
+### 4. Scrubbed Storage
+
 Scrubbed storage is temporary scratch space for active computation. It’s not backed up and files are deleted automatically after **60 days** of inactivity.
 
 Location:
 
 ```bash
-/gpfs/scrubbed/
-```
-
-For this tutorial, we’ll use scrubbed space as our working directory. Create a personal folder there and move into it:
-
-```bash
-mkdir /gpfs/scrubbed/$USER
-cd /gpfs/scrubbed/$USER
-```
-
-While we're at it, le'ts clone the git repository for this tutorial, we'll use some of the files later. 
-
-```bash
-git clone https://github.com/UWrc/tillicum-onboarding.git
-```
-
-You can check the contens of your working directory and the contents of the git repository at any time with:
-
-```bash
+cd /gpfs/scrubbed/
 ls
-ls tillicum-onboarding
-```
-
-#### Important Note on `/gpfs/scrubbed` and Conda Environments
-
-Because `/gpfs/scrubbed` is periodically cleaned, files that have not been modified in the last 60 days may be deleted.
-We have found that if users store their Conda environment directories here, some package files may be removed over time, breaking the environment.
-
-* Do not store Conda environments in `/gpfs/scrubbed`.
-* The home directory is too small for most environments.
-* We recommend using dedicated project storage (available through the Tillicum intake process) for stable environment storage.
-
-### 5. Practice: Exploring the Tillicum Filesystem
-Let’s practice a few commands to get familiar with the filesystem:
-
-```bash
-# Go to the root directory
-cd /
-
-# List top-level directories
-ls
-
-# Explore home directories
-ls /gpfs/home/
-
-# Explore scrubbed storage
-ls /gpfs/scrubbed/
-
-# Enter your scrubbed working directory for this tutuorial
-cd /gpfs/scrubbed/$USER
-
-# Return to your home directory
-cd ~
-pwd
 ```
