@@ -33,16 +33,23 @@ Common issues to check:
 
 ### Step 2: Convert the Notebook to a Python Script
 
-From the terminal on Tillicum, navigate to your notebook directory and run:
+From the terminal on Tillicum, load the conda module and activate your class environment. 
 
 ```bash
-jupyter nbconvert --to script example.ipynb
+module load conda
+conda activate /gpfs/projects/imt526a/conda/envs/imt526a-jupyter-torch
+```
+
+Navigate to your notebook directory and run:
+
+```bash
+jupyter nbconvert --to script python_demo.ipynb
 ```
 
 This will create a Python script in the same directory:
 
 ```bash
-example.py
+python_demo.py
 ```
 
 ### Step 3: Review the Script
