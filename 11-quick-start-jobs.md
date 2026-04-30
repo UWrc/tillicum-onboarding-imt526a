@@ -103,6 +103,12 @@ cat slurm-<job_id>.out
 > squeue -u $USER
 > watch -n 10 squeue -u $USER
 > ```
+> If you ever needed to cancel a job:
+>
+> ```bash
+> # Adjust with the job_id from your job
+> scancel <job_id>
+> ```
 > See more details in: 👉 [**<ins>04-monitoring-usage.md</ins>**](./04-monitoring-usage.md)
 
 ## Tips
