@@ -39,10 +39,10 @@ Each topic in this tutorial is contained in its own Markdown file for easy navig
 | [**<ins>10-notebooks-convert.md</ins>**](./10-notebooks-convert.md) | Converting Jupyter Notebooks to Python Scripts |
 | [**<ins>11-quick-start-jobs.md</ins>**](./11-quick-start-jobs.md) | Practice: submit and monitor your own jobs on Tillicum |
 
-## Slide Deck
+## Slide Decks
 
-[**<ins>Onboarding Slide Deck</ins>**](./slides_tillicum_onboarding.pdf) from live tutorial on March 31, 2026
-[**<ins>Slurm Slide Deck</ins>**](./slides_tillicum_slurm.pdf) from live tutorial on April 30, 2026
+* [**<ins>Onboarding Slide Deck</ins>**](./slides_tillicum_onboarding.pdf) from live tutorial on March 31, 2026
+* [**<ins>Slurm Slide Deck</ins>**](./slides_tillicum_slurm.pdf) from live tutorial on April 30, 2026
 
 ## Additional Resources
 
