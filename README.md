@@ -7,7 +7,7 @@ This repository provides step-by-step materials to help new users get started wi
 ## Overview
 
 Tillicum is a GPU-accelerated research computing cluster supporting AI, data science, and HPC workloads.
-This tutorial covers everything you need to start using Tillicum effectively for Class IMT 526 A — from logging in to running interactive notebooks on GPUs.
+This tutorial covers everything you need to start using Tillicum effectively for Class IMT 526 A — from logging in to running interactive notebooks on GPUs and submitting jobs with Slurm.
 
 By completing this tutorial, you’ll learn how to:
 
@@ -18,6 +18,9 @@ By completing this tutorial, you’ll learn how to:
 * Load and manage software modules
 * Use Conda computing environments
 * Launch Jupyter notebooks through Open OnDemand
+* Use your group project Slurm account
+* Schedule jobs with Slurm
+* Use BASH to submit unsupervised jobs 
 
 ## Repository Structure
 Each topic in this tutorial is contained in its own Markdown file for easy navigation:
@@ -31,6 +34,10 @@ Each topic in this tutorial is contained in its own Markdown file for easy navig
 | [**<ins>05-computing-env.md</ins>**](./05-computing-env.md) | Setting up Conda environments |
 | [**<ins>06-ood-jupyter.md</ins>**](./06-ood-jupyter.md) | Running Jupyter notebooks via Open OnDemand |
 | [**<ins>07-task.md</ins>**](./07-task.md) | Preparations for the class |
+| [**<ins>08-intro-group-projects.md</ins>**](./08-intro-group-projects.md) | Need-to-knows for group projects |
+| [**<ins>09-scheduling-jobs.md</ins>**](./09-scheduling-jobs.md) | Introducing Slurm basics for scheduling interactive and batch jobs |
+| [**<ins>10-notebooks-convert.md</ins>**](./10-notebooks-convert.md) | Converting Jupyter Notebooks to Python Scripts |
+| [**<ins>11-quick-start-jobs.md</ins>**](./11-quick-start-jobs.md) | Practice: submit and monitor your own jobs on Tillicum |
 
 ## Slide Deck
 
@@ -40,6 +47,7 @@ Each topic in this tutorial is contained in its own Markdown file for easy navig
 
 * [**<ins>Tillicum GPU Credits for Students</ins>**](https://depts.washington.edu/uwrcc/tillicum/)
 * [**<ins>Tillicum Documentation</ins>**](https://hyak.uw.edu/docs/tillicum/)
+* [**<ins>Tillicum Slurm Tutorial</ins>**](https://github.com/UWrc/tillicum-slurm.git)
 * [**<ins>Open OnDemand Portal</ins>**](https://hyak.uw.edu/docs/ood/start)
 * [**<ins>Our Globus Docs</ins>**](https://hyak.uw.edu/docs/storage/globus)
 * [**<ins>Globus' Documentation</ins>**](https://docs.globus.org/?_gl=1*da6xxk*_ga*ODMxMTMwMTg2LjE3NTg3MzQ0OTk.*_ga_7ZB89HGG0P*czE3NTk2MTAwNTAkbzckZzAkdDE3NTk2MTAwNTAkajYwJGwwJGgw)
