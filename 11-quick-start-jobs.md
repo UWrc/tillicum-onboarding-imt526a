@@ -122,7 +122,7 @@ If your project requires more advanced workflows, you may explore:
 
 > 💡 **Tip:** If you need to test multiple model parameters (e.g., learning rates), this can be done efficiently using Slurm job arrays.
 
-👉 [**<ins>See our Tillicum Slurm Tutorial</ins>**](./https://github.com/UWrc/tillicum-slurm.git)
+👉 [**<ins>See our Tillicum Slurm Tutorial</ins>**](https://github.com/UWrc/tillicum-slurm.git)
 
 > ⚠️ ***Be mindful of resource usage and cost when running multiple jobs in parallel.***
 
