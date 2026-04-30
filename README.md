@@ -41,7 +41,8 @@ Each topic in this tutorial is contained in its own Markdown file for easy navig
 
 ## Slide Deck
 
-[**<ins>Slide Deck</ins>**](./slides_tillicum_onboarding.pdf) from live tutorial on March 31, 2026
+[**<ins>Onboarding Slide Deck</ins>**](./slides_tillicum_onboarding.pdf) from live tutorial on March 31, 2026
+[**<ins>Slurm Slide Deck</ins>**](./slides_tillicum_slurm.pdf) from live tutorial on April 30, 2026
 
 ## Additional Resources
 
