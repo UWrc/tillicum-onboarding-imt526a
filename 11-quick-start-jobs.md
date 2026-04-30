@@ -77,11 +77,10 @@ conda activate /gpfs/projects/imt526a/conda/envs/imt526a-jupyter-torch
 
 python python_demo.py
 ```
-This verifies your environment is working correctly on a compute node.
+When you are finished editing `job.slurm`, exit `nano` with:
 
-When finished:
 ```bash
-exit
+Ctrl + C
 ```
 
 Submit the job:
