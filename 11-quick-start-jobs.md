@@ -30,6 +30,7 @@ nvidia-smi
 
 Load the conda module and activate the class environment:
 ```bash
+module purge
 module load conda
 conda activate /gpfs/projects/imt526a/conda/envs/imt526a-jupyter-torch
 ```
