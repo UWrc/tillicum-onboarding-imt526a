@@ -1,0 +1,97 @@
+20260430 - Tillicum Slurm notes
+
+Login
+
+home directory - storage reminder
+
+navigate to project dir
+cd /gpfs/projects/imt526A/
+
+ls
+
+identify your group directory
+
+navigate to scrubbed, make dir if needed
+cd /gpfs/scrubbed
+
+mkdir $USER
+
+cd $USER
+
+Clone and unpack materials in 1 step
+git clone https://github.com/UWrc/tillicum-onboarding-imt526a.git .
+
+Explanation of the files in the repo - show the repo on the screen and walk through any reminders
+
+Land on the Jupyter Notebook example
+
+Typical workflow discussion
+
+Notebook Conversion
+
+1. Check
+- check code runs completely
+	- avoid missing input
+	- variable set out of order or in earlier interactive runs
+	- hardcodes or incorrect file paths
+	
+2. Convert
+module load conda
+conda activate /gpfs/projects/imt526a/conda/envs/imt526a-jupyter-torch
+jupyter nbconvert --to script python_demo.ipynb
+
+3. Review
+cat python_demo.py
+
+Quick Start Running Jobs
+
+Slurm flags
+--account
+--qos
+--nodes
+--gpus
+--mem
+--time
+
+Slurm Demo
+
+1. Interactive Job
+Adjust for your group
+salloc -A groupX --qos=interactive --gpus=1 --time=00:30:00
+
+2. Load the environment
+module purge
+module load conda
+conda activate /gpfs/projects/imt526a/conda/envs/imt526a-jupyter-torch
+
+Test python
+which python
+python --version
+
+3. Run Python Script
+python python_demo.py
+
+exit
+
+4. Do the same, but submit as a batch job
+Use a text editor to work with text files on Tillicum
+nano job.slurm
+
+Adjust the --account line to match your group
+
+Submit the job
+sbatch job.slurm
+
+Check Job status - the job will run VERY fast
+squeue -u $USER
+
+List the directory to see the output
+ls
+
+Review the output - adjust with your JobID
+cat slurm-<job_id>.out
+
+Tips
+
+Optional Next Steps - Advanced Topics full tutorial 
+https://github.com/UWrc/tillicum-slurm.git
