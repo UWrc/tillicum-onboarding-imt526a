@@ -77,11 +77,7 @@ conda activate /gpfs/projects/imt526a/conda/envs/imt526a-jupyter-torch
 
 python python_demo.py
 ```
-When you are finished editing `job.slurm`, exit `nano` with:
-
-```bash
-Ctrl + C
-```
+When you are finished editing `job.slurm`, exit `nano` with by holding the Control button and pushing the C button (Ctrl + C). 
 
 Submit the job:
 ```bash
